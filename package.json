@@ -1,0 +1,24 @@
+{
+  "name": "pirate",
+  "version": "0.0.1",
+  "description": "A CLI for the Pirate Bay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:arshad/pirate.git"
+  },
+  "keywords": [
+    "piratebay",
+    "cli",
+    "termial"
+  ],
+  "author": "Arshad Chummun <arshad@chummun.com> (http://arshad.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arshad/pirate/issues"
+  },
+  "homepage": "https://github.com/arshad/pirate"
+}
