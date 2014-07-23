@@ -1,6 +1,6 @@
 {
   "name": "kaizoku",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CLI for the Pirate Bay",
   "main": "app.js",
   "preferGlobal": "true",
