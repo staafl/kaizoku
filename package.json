@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/arshad/pirate/issues"
   },
-  "homepage": "https://github.com/arshad/pirate"
+  "homepage": "https://github.com/arshad/pirate",
+  "dependencies": {
+    "commander": "~2.3.0"
+  }
 }
