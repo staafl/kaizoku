@@ -10,19 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:arshad/pirate.git"
+    "url": "git@github.com:arshad/kaizoku.git"
   },
   "keywords": [
     "piratebay",
     "cli",
-    "termial"
+    "terminal"
   ],
   "author": "Arshad Chummun <arshad@chummun.com> (http://arshad.github.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arshad/pirate/issues"
+    "url": "https://github.com/arshad/kaizoku/issues"
   },
-  "homepage": "https://github.com/arshad/pirate",
+  "homepage": "https://github.com/kaizoku/pirate",
   "dependencies": {
     "commander": "~2.3.0",
     "request": "~2.38.0",
