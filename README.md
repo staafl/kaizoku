@@ -20,6 +20,8 @@ This will automatically:
 * Get the magnet link for the torrent.
 * Open your torrent client and start the download.
 
+    kaizoku search "Game of Thrones"
+
 License
 --------------
 
