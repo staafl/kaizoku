@@ -10,6 +10,8 @@ Installation
 Usage
 --------------
 
+#### Download
+
     kaizoku download "Game of Thrones s01e01"
     
 This will automatically:
@@ -19,6 +21,8 @@ This will automatically:
 * Get the torrent with the most seeds.
 * Get the magnet link for the torrent.
 * Open your torrent client and start the download.
+
+#### Search
 
     kaizoku search "Game of Thrones"
 
