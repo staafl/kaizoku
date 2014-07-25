@@ -24,7 +24,9 @@ This will automatically:
 
 #### Search
 
-    kaizoku search "Game of Thrones"
+    kaizoku search "Game of Thrones s01e01"
+    
+![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
 
 License
 --------------
