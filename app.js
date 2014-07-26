@@ -38,6 +38,22 @@ program
     kaizoku.download(keywords);
   });
 
+/**
+ * Top command.
+ * Example: kaizoku top [category].
+ */
+program
+  .command('top [category]')
+  .description('Use this command to see top torrents.')
+  .action(function(category, options){
+    if (!category) {
+      console.log('Error: category missing');
+      program.help();
+    }
+
+    kaizoku.top(category);
+  });
+
 program.parse(process.argv);
 
 if (!program.args.length) program.help();
