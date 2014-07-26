@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/arshad/kaizoku/issues"
   },
-  "homepage": "https://github.com/kaizoku/pirate",
+  "homepage": "https://github.com/kaizoku/kaizoku",
   "dependencies": {
     "commander": "~2.3.0",
     "request": "~2.38.0",
