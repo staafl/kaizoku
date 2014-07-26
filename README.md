@@ -19,14 +19,21 @@ This will automatically:
 * Search for "Game of Thrones s01e01" on thepiratebay.se.
 * Find the best match.
 * Get the torrent with the most seeds.
-* Get the magnet link for the torrent.
-* Open your torrent client and start the download.
+* Get the magnet link for the torrent and display it.
+* Open your torrent client and start the download (Mac only).
 
 #### Search
 
     kaizoku search "Game of Thrones s01e01"
     
 ![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
+
+#### Top
+Displays a list of top torrents.
+
+    kaizoku top movies
+
+    kaizoku top tvshows
 
 License
 --------------
