@@ -29,11 +29,15 @@ This will automatically:
 ![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
 
 #### Top
-Displays a list of top torrents.
+Displays a list of top torrents by category.
 
     kaizoku top movies
 
     kaizoku top tvshows
+    
+To see a list of all categories:
+
+    kaizoku cat
 
 License
 --------------
