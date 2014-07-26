@@ -48,7 +48,7 @@ program
   .description('Use this command to see top torrents.')
   .action(function(category, options){
     if (!category) {
-      console.log('Error: category missing');
+      console.log('Error: category missing. Use kaizoku cat to see a list of available categories.');
       program.help();
     }
 
