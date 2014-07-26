@@ -1,7 +1,8 @@
 #! /usr/bin/env node
-var program = require('commander');
-var kaizoku = require('./lib/kaizoku.js');
-var Table = require('cli-table');
+var program = require('commander')
+  , kaizoku = require('./lib/kaizoku.js')
+  , Table = require('cli-table')
+  ;
 
 // Get version from package.json.
 var version = require('./package.json').version;
