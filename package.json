@@ -1,6 +1,6 @@
 {
   "name": "kaizoku",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A CLI for the Pirate Bay",
   "main": "app.js",
   "preferGlobal": "true",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/arshad/kaizoku/issues"
   },
-  "homepage": "https://github.com/kaizoku/kaizoku",
+  "homepage": "https://github.com/arshad/kaizoku",
   "dependencies": {
     "commander": "~2.3.0",
     "request": "~2.38.0",
