@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 var program = require('commander');
 var kaizoku = require('./lib/kaizoku.js');
+var Table = require('cli-table');
 
 // Get version from package.json.
 var version = require('./package.json').version;
@@ -52,6 +53,30 @@ program
     }
 
     kaizoku.top(category);
+  });
+
+/**
+ * Categories command.
+ * Example: kaizoku cat.
+ */
+program
+  .command('cat')
+  .description('Use this command to see all available categories.')
+  .action(function(options){
+    var categories = kaizoku.getCategories();
+
+    // Log as a table.
+    var table = new Table({
+      head: ['Category', 'Category ID']
+    });
+
+    for (var i in categories) {
+      table.push(
+        [i, categories[i]]
+      );
+    }
+
+    console.log(table.toString());
   });
 
 program.parse(process.argv);
