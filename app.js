@@ -39,6 +39,7 @@ program
 program
   .command('download [keywords]')
   .alias('d')
+  .option("-c, --category <category>", 'The category to search in.')
   .description('Use this command to quickly download a torrent.')
   .action(function(keywords, options){
     if (!keywords) {
@@ -47,7 +48,7 @@ program
     }
 
     kaizoku.setURL(program.url);
-    kaizoku.search(keywords, function(torrents) {
+    kaizoku.search(keywords, options.category, function(torrents) {
       // Get the magnet link for the first result.
       // Assumming the first result has the most seeds.
       var magnentLink = torrents[0].magnet;
