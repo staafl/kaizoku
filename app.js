@@ -17,6 +17,7 @@ program.version(version)
 program
   .command('search [keywords]')
   .alias('s')
+  .option("-c, --category <category>", 'The category to search in.')
   .description('Use this command to search torrents.')
   .action(function(keywords, options){
     if (!keywords) {
@@ -25,7 +26,7 @@ program
     }
 
     kaizoku.setURL(program.url);
-    kaizoku.search(keywords, function(torrents) {
+    kaizoku.search(keywords, options.category, function(torrents) {
       // Log output to terminal.
       kaizoku.displayTorrents(torrents);
     });
