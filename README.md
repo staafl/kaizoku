@@ -31,6 +31,10 @@ This will automatically:
 
     $ kaizoku search "Game of Thrones s01e01"
     $ kaizoku s "Game of Thrones s01e01"
+
+    # Limit search to a category
+    $ kaizoku s "Game of Thrones" --category movies
+    $ kaizoku s "Game of Thrones" --c tvshows
     
 ![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
 
