@@ -43,6 +43,8 @@ Displays a list of top torrents by category.
 
     $ kaizoku top movies
     $ kaizoku top tvshows
+    
+    # Using aliases
     $ kaizoku t movies
     
 To see a list of all categories:
