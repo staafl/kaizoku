@@ -34,7 +34,7 @@ This will automatically:
 
     # Limit search to a category
     $ kaizoku s "Game of Thrones" --category movies
-    $ kaizoku s "Game of Thrones" --c tvshows
+    $ kaizoku s "Game of Thrones" -c tvshows
     
 ![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
 
