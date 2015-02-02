@@ -49,7 +49,7 @@ To see a list of all categories:
 
     kaizoku cat
 
-#### Custom URL for thepiratebay (thanks to [fazo96](https://github.com/fazo96))
+#### Using a proxy?
 
     kaizoku search "Keywords" --url http://pirateproxy.in
 
