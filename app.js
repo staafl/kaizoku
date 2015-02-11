@@ -53,7 +53,12 @@ program
       // Assumming the first result has the most seeds.
       var magnentLink = torrents[0].magnet;
 
+      // Display the top torrent.
+      console.log("Found: ");
+      console.log(torrents[0].title);
+
       // Display the magnet link.
+      console.log("");
       console.log("Magnet link for top torrent:");
       console.log(magnentLink);
 
