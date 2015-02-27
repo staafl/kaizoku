@@ -4,6 +4,8 @@ A CLI for thepiratebay.
 
 [![Build Status](https://travis-ci.org/arshad/kaizoku.svg?branch=master)](https://travis-ci.org/arshad/kaizoku)
 
+![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
+
 Installation
 --------------
 
@@ -33,8 +35,6 @@ This will automatically:
     # Limit search to a category
     $ kaizoku s "Game of Thrones" --category movies
     $ kaizoku s "Game of Thrones" -c tvshows
-    
-![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)
 
 #### Top
 Displays a list of top torrents by category.
