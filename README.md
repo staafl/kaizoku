@@ -1,6 +1,6 @@
 Kaizoku
 ===
-A CLI for thepiratebay.
+A CLI for the Pirate Bay that can search for torrent and automatically add it to your torrent client.
 
 [![Build Status](https://travis-ci.org/arshad/kaizoku.svg?branch=master)](https://travis-ci.org/arshad/kaizoku)
 
