@@ -4,6 +4,7 @@ var program = require('commander')
   , Table = require('cli-table')
   , exec = require('child_process').exec
   , open = require("open")
+  , peerflix = require('peerflix')
   ;
 
 // Get version from package.json.
@@ -65,6 +66,47 @@ program
       // Open the magnent link.
       // exec("open " + magnentLink);
       open(magnentLink);
+    });
+  });
+
+/**
+ * Stream command.
+ * Example: kaizoku stream [keywords].
+ */
+program
+  .command('stream [keywords]')
+  .alias('st')
+  .option("-c, --category <category>", 'The category to search in.')
+  .option("-l, --subtitle <sid>", 'Sid From Legendas-zone.')
+  .description('Use this command to quickly stream a torrent.')
+  .action(function (keywords, options) {
+    if (!keywords) {
+      console.log('Error: keywords missing');
+      program.help();
+    }
+
+    kaizoku.setURL(program.url);
+    
+    kaizoku.search(keywords, options.category, function (torrents) {
+
+      if(torrents.length == 0){
+        console.log("Torrents not found");
+        return;
+      }
+      // Display the top torrent.
+      console.log("Watching: "+torrents[0].title);
+
+      // Get the magnet link for the first result.
+      // Assumming the first result has the most seeds.
+      var magnentLink = torrents[0].magnet;
+
+      var engine = peerflix(magnentLink);
+
+      engine.server.on('listening', function () {
+        var myLink = 'http://localhost:' + engine.server.address().port + '/';
+        //Play to VLC and "network" :D
+        kaizoku.playVlc(myLink, engine);
+      });
     });
   });
 
