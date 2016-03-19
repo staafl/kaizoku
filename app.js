@@ -2,7 +2,6 @@
 var program = require('commander')
   , kaizoku = require('./lib/kaizoku.js')
   , Table = require('cli-table')
-  , exec = require('child_process').exec
   , open = require("open")
   , peerflix = require('peerflix')
   ;
@@ -64,7 +63,6 @@ program
       console.log(magnentLink);
 
       // Open the magnent link.
-      // exec("open " + magnentLink);
       open(magnentLink);
     });
   });
@@ -86,7 +84,7 @@ program
     }
 
     kaizoku.setURL(program.url);
-    
+
     kaizoku.search(keywords, options.category, function (torrents) {
 
       if(torrents.length == 0){
