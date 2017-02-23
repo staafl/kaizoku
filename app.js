@@ -4,6 +4,9 @@ var program = require('commander')
   , Table = require('cli-table')
   , open = require("open")
   , peerflix = require('peerflix')
+  , readlineSync = require('readline-sync')
+  // , magnetToTorrent = require('magnet-to-torrent')
+  // , createTorrent = require('create-torrent')
   ;
 
 // Get version from package.json.
@@ -18,6 +21,10 @@ program
   .command('search [keywords]')
   .alias('s')
   .option("-c, --category <category>", 'The category to search in.')
+  .option("-sc, --categories", 'Displays the category for each torrent.')
+  .option("-d, --details", 'Displays more details about each torrent.')
+  .option("-p, --pipe", 'Pipes output magnet.')
+  .option("-t, --transmission", 'Uses transmission-daemon to download torrent with magnet (brew install transmission).')
   .description('Use this command to search torrents.')
   .action(function(keywords, options){
     if (!keywords) {
@@ -28,7 +35,35 @@ program
     kaizoku.setURL(program.url);
     kaizoku.search(keywords, options.category, function(torrents) {
       // Log output to terminal.
-      kaizoku.displayTorrents(torrents);
+      kaizoku.displayTorrents(torrents, options.categories, options.details);
+
+      var torrentId = readlineSync.question('\x1b[32m Select a torrent Id to start download: ');
+
+      if (torrentId) {
+        var magnentLink = torrents[torrentId].magnet;
+        // Open the magnent link.
+        if (options.transmission) {
+          const exec = require('child_process').exec;
+          const execSync = require('child_process').execSync;
+          var cmd = execSync('transmission-daemon'); // // make sure the transmission daemon is running (requirement on MacOS: $ brew install transmission)
+          exec('transmission-remote -a ' + magnentLink, (error, stdout, stderr) => { // add selected torrent via magnet
+              if (error !== null) console.log('\x1b[41m', 'exec error: ' + error, '\x1b[0m');
+            else {
+              exec('transmission-remote -l', (error, stdout, stderr) => { // list transmisstion torrents
+                console.log('\x1b[36m', stdout, '\x1b[0m');
+                if (error !== null) console.log('\x1b[41m', 'exec error: ' + error, '\x1b[0m');
+              });
+            }
+          });
+        }
+        else if (options.pipe) {
+          console.log(magnentLink);
+        }
+        else open(magnentLink);
+      }
+      else {
+        console.log('No torrent selected for download.');
+      }
     });
   });
 
@@ -115,6 +150,10 @@ program
 program
   .command('top [category]')
   .alias('t')
+  .option("-sc, --categories", 'Displays the category for each torrent.')
+  .option("-d, --details", 'Displays more details about each torrent.')
+  .option("-p, --pipe", 'Pipes output magnet.')
+  .option("-t, --transmission", 'Uses transmission-daemon to download torrent with magnet (brew install transmission).')
   .description('Use this command to see top torrents.')
   .action(function(category, options){
     if (!category) {
@@ -124,7 +163,36 @@ program
     kaizoku.setURL(program.url);
     kaizoku.top(category, function(torrents) {
       // Log output to terminal.
-      kaizoku.displayTorrents(torrents);
+      // shouldn't really display categories here as, we are selecting a specific category to show
+      kaizoku.displayTorrents(torrents, false, options.details);
+
+      var torrentId = readlineSync.question('\x1b[32m Select a torrent Id to start download: ');
+
+      if (torrentId) {
+        var magnentLink = torrents[torrentId].magnet;
+        // Open the magnent link.
+        if (options.transmission) {
+          const exec = require('child_process').exec;
+          const execSync = require('child_process').execSync;
+          var cmd = execSync('transmission-daemon'); // // make sure the transmission daemon is running (requirement on MacOS: $ brew install transmission)
+          exec('transmission-remote -a ' + magnentLink, (error, stdout, stderr) => { // add selected torrent via magnet
+              if (error !== null) console.log('\x1b[41m', 'exec error: ' + error, '\x1b[0m');
+            else {
+              exec('transmission-remote -l', (error, stdout, stderr) => { // list transmisstion torrents
+                console.log('\x1b[36m', stdout, '\x1b[0m');
+                if (error !== null) console.log('\x1b[41m', 'exec error: ' + error, '\x1b[0m');
+              });
+            }
+          });
+        }
+        else if (options.pipe) {
+          console.log(magnentLink);
+        }
+        else open(magnentLink);
+      }
+      else {
+        console.log('No torrent selected for download.');
+      }
     });
   });
 
