@@ -49,6 +49,10 @@ This will automatically:
     $ kaizoku s "Game of Thrones" --category movies
     $ kaizoku s "Game of Thrones" -c tvshows
 
+    (option to use transmission cli to handle torrent output)
+    $ kaizoku search "terminator 2" -d -t --url http://pirateproxy.se
+    $ Select a torrent Id to start download: <select and Id>
+
 #### Top
 Displays a list of top torrents by category.
 
