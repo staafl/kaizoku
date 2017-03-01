@@ -18,7 +18,7 @@ Usage
 
     $ kaizoku download "Game of Thrones s01e01"
     $ kaizoku d "Game of Thrones s01e01"
-    
+
 This will automatically:
 
 * Search for "Game of Thrones s01e01" on thepiratebay.se.
@@ -27,11 +27,15 @@ This will automatically:
 * Get the magnet link for the torrent and display it.
 * Open your torrent client and start the download.
 
+Alternatively, you can use an ID from the search below to download as well
+
+    $ kaizoku download -i 15496322
+
 #### Stream
 
     $ kaizoku stream "Game of Thrones s01e01"
     $ kaizoku st "Game of Thrones s01e01"
-    
+
 This will automatically:
 
 * Search for "Game of Thrones s01e01" on thepiratebay.se.
@@ -58,10 +62,10 @@ Displays a list of top torrents by category.
 
     $ kaizoku top movies
     $ kaizoku top tvshows
-    
+
     # Using aliases
     $ kaizoku t movies
-    
+
 To see a list of all categories:
 
     kaizoku cat
@@ -94,5 +98,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-  
