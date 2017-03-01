@@ -75,31 +75,60 @@ program
   .command('download [keywords]')
   .alias('d')
   .option("-c, --category <category>", 'The category to search in.')
+  .option("-i, --id <id>", 'The ID of a torrent to download.', parseInt)
   .description('Use this command to quickly download a torrent.')
   .action(function(keywords, options){
-    if (!keywords) {
-      console.log('Error: keywords missing');
-      program.help();
+    var torrentId = null;
+
+    // Only check if there are keywords to search if there is no ID
+    if (!options.id) {
+      if (!keywords) {
+        console.log('Error: keywords missing');
+        program.help();
+      }
+    } else {
+      torrentId = options.id;
     }
 
     kaizoku.setURL(program.url);
-    kaizoku.search(keywords, options.category, function(torrents) {
-      // Get the magnet link for the first result.
-      // Assumming the first result has the most seeds.
-      var magnentLink = torrents[0].magnet;
 
-      // Display the top torrent.
-      console.log("Found: ");
-      console.log(torrents[0].title);
+    if (torrentId) {
+      kaizoku.magnet(torrentId, function(torrent) {
+        // Get the magnet link for the first result.
+        // Assumming the first result has the most seeds.
+        var magnetLink = torrent.magnet;
 
-      // Display the magnet link.
-      console.log("");
-      console.log("Magnet link for top torrent:");
-      console.log(magnentLink);
+        // Display the top torrent.
+        console.log("Found: ");
+        console.log(torrent.title);
 
-      // Open the magnent link.
-      open(magnentLink);
-    });
+        // Display the magnet link.
+        console.log("");
+        console.log("Magnet link for torrent:");
+        console.log(magnetLink);
+
+        // Open the magnent link.
+        open(magnetLink);
+      });
+    } else {
+      kaizoku.search(keywords, options.category, function(torrents) {
+        // Get the magnet link for the first result.
+        // Assumming the first result has the most seeds.
+        var magnetLink = torrents[0].magnet;
+
+        // Display the top torrent.
+        console.log("Found: ");
+        console.log(torrents[0].title);
+
+        // Display the magnet link.
+        console.log("");
+        console.log("Magnet link for top torrent:");
+        console.log(magnetLink);
+
+        // Open the magnent link.
+        open(magnetLink);
+      });
+    }
   });
 
 /**
@@ -131,9 +160,9 @@ program
 
       // Get the magnet link for the first result.
       // Assumming the first result has the most seeds.
-      var magnentLink = torrents[0].magnet;
+      var magnetLink = torrents[0].magnet;
 
-      var engine = peerflix(magnentLink);
+      var engine = peerflix(magnetLink);
 
       engine.server.on('listening', function () {
         var myLink = 'http://localhost:' + engine.server.address().port + '/';
