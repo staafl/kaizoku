@@ -26,19 +26,19 @@
   },
   "homepage": "https://github.com/arshad/kaizoku",
   "dependencies": {
-    "commander": "~2.3.0",
-    "request": "~2.38.0",
-    "cheerio": "~0.17.0",
-    "querystring": "~0.2.0",
-    "cli-table": "~0.3.0",
-    "open": "0.0.5",
-    "peerflix": "0.32.4",
-    "windows-no-runnable": "0.0.6",
-    "get-json": "0.0.2",
-    "readline-sync": "1.4.6"
+    "cheerio": "^0.22.0",
+    "cli-table": "^0.3.1",
+    "commander": "^2.9.0",
+    "get-json": "^0.0.3",
+    "open": "^0.0.5",
+    "readline-sync": "^1.4.6",
+    "peerflix": "^0.36.1",
+    "querystring": "^0.2.0",
+    "request": "^2.79.0",
+    "windows-no-runnable": "^0.0.6"
   },
   "devDependencies": {
-    "chai": "~1.9.1",
-    "mocha": "~1.21.0"
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
