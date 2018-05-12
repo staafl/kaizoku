@@ -1,44 +1,99 @@
 {
-  "name": "kaizoku",
-  "version": "2.0.0",
-  "description": "A CLI for the Pirate Bay",
-  "main": "app.js",
-  "preferGlobal": "true",
+  "_args": [
+    [
+      {
+        "raw": "kaizoku",
+        "scope": null,
+        "escapedName": "kaizoku",
+        "name": "kaizoku",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Windows"
+    ]
+  ],
+  "_from": "kaizoku@latest",
+  "_id": "kaizoku@1.2.6",
+  "_inCache": true,
+  "_location": "/kaizoku",
+  "_npmUser": {
+    "name": "arshad",
+    "email": "arshad@chummun.com"
+  },
+  "_npmVersion": "1.3.21",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "kaizoku",
+    "scope": null,
+    "escapedName": "kaizoku",
+    "name": "kaizoku",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/kaizoku/-/kaizoku-1.2.6.tgz",
+  "_shasum": "24277424378330935bc681360077d3b0cd40287f",
+  "_shrinkwrap": null,
+  "_spec": "kaizoku",
+  "_where": "C:\\Windows",
+  "author": {
+    "name": "Arshad Chummun",
+    "email": "arshad@chummun.com",
+    "url": "http://arshad.github.io/"
+  },
   "bin": {
     "kaizoku": "app.js"
   },
-  "scripts": {
-    "test": "mocha"
+  "bugs": {
+    "url": "https://github.com/arshad/kaizoku/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:arshad/kaizoku.git"
+  "dependencies": {
+    "cheerio": "~0.17.0",
+    "cli-table": "~0.3.0",
+    "commander": "~2.3.0",
+    "open": "0.0.5",
+    "querystring": "~0.2.0",
+    "request": "~2.38.0"
   },
+  "description": "A CLI for the Pirate Bay",
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.21.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "24277424378330935bc681360077d3b0cd40287f",
+    "tarball": "https://registry.npmjs.org/kaizoku/-/kaizoku-1.2.6.tgz"
+  },
+  "homepage": "https://github.com/arshad/kaizoku",
   "keywords": [
     "piratebay",
     "cli",
     "terminal"
   ],
-  "author": "Arshad Chummun <arshad@chummun.com> (http://arshad.io/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/arshad/kaizoku/issues"
+  "main": "app.js",
+  "maintainers": [
+    {
+      "name": "arshad",
+      "email": "arshad@chummun.com"
+    }
+  ],
+  "name": "kaizoku",
+  "optionalDependencies": {},
+  "preferGlobal": "true",
+  "readme": "Kaizoku\n===\nA CLI for thepiratebay.\n\n[![Build Status](https://travis-ci.org/arshad/kaizoku.svg?branch=master)](https://travis-ci.org/arshad/kaizoku)\n\nInstallation\n--------------\n\n    $ npm install kaizoku -g\n\nUsage\n--------------\n\n#### Download\n\n    $ kaizoku download \"Game of Thrones s01e01\"\n    $ kaizoku d \"Game of Thrones s01e01\"\n    \nThis will automatically:\n\n* Search for \"Game of Thrones s01e01\" on thepiratebay.se.\n* Find the best match.\n* Get the torrent with the most seeds.\n* Get the magnet link for the torrent and display it.\n* Open your torrent client and start the download.\n\n#### Search\n\n    $ kaizoku search \"Game of Thrones s01e01\"\n    $ kaizoku s \"Game of Thrones s01e01\"\n\n    # Limit search to a category\n    $ kaizoku s \"Game of Thrones\" --category movies\n    $ kaizoku s \"Game of Thrones\" -c tvshows\n    \n![alt tag](https://raw.githubusercontent.com/arshad/kaizoku/master/screenshot.png)\n\n#### Top\nDisplays a list of top torrents by category.\n\n    $ kaizoku top movies\n    $ kaizoku top tvshows\n    \n    # Using aliases\n    $ kaizoku t movies\n    \nTo see a list of all categories:\n\n    kaizoku cat\n\n#### Using a proxy?\n\n    kaizoku search \"Keywords\" --url http://pirateproxy.in\n\nLicense\n--------------\n\nThe MIT License (MIT)\n\nCopyright (c) 2014 Arshad Chummun\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n  \n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arshad/kaizoku.git"
   },
-  "homepage": "https://github.com/arshad/kaizoku",
-  "dependencies": {
-    "cheerio": "^0.22.0",
-    "cli-table": "^0.3.1",
-    "commander": "^2.9.0",
-    "get-json": "^0.0.3",
-    "open": "^0.0.5",
-    "readline-sync": "^1.4.6",
-    "peerflix": "^0.36.1",
-    "querystring": "^0.2.0",
-    "request": "^2.79.0",
-    "windows-no-runnable": "^0.0.6"
+  "scripts": {
+    "test": "mocha"
   },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0"
-  }
+  "version": "1.2.6"
 }
